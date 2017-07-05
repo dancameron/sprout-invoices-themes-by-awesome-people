@@ -1,2 +1,3 @@
-# sprout-invoices-themes-by-awesome-people
-Sprout Invoices Theme Projects
+# Sprout Invoices Theme Projects
+
+Each branch is a different theme, some themes may not be complete, being complete is relative, relativity is time, time is a flat circle...
