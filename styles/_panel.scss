@@ -15,11 +15,16 @@
   animation-fill-mode: both;
   animation-duration: .5s;
 
-  &.inactive {
+  &.closed {
+    visibility: hidden;
+    transform: translate3d(0, 100%, 0);
+  }
+
+  &.closing {
     animation-name: slide-out;
   }
 
-  &.active {
+  &.opening {
     animation-name: slide-in;
   }
 

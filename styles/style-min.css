@@ -117,7 +117,7 @@ body {
   background-color: #438cb7;
   text-align: center; }
   #header .inner {
-    padding: 100px 0 93px;
+    padding: 100px 0 100px;
     border-bottom: 1px dashed rgba(255, 255, 255, 0.75); }
     @media (max-width: 480px) {
       #header .inner {
@@ -141,8 +141,22 @@ body {
         #header .inner .intro h1 {
           font-size: 22px; } }
     #header .inner .intro span {
+      display: inline-block;
       font-size: 18px;
-      font-weight: 900; }
+      font-weight: 900;
+      margin-bottom: 22px; }
+    #header .inner .intro .open {
+      height: 30px;
+      display: inline-block;
+      padding: 0 12px;
+      background-color: #4086b0;
+      border-radius: 15px;
+      background-color: rgba(255, 255, 255, 0.75);
+      font-size: 12px;
+      font-weight: 900;
+      line-height: 30px;
+      text-transform: uppercase;
+      color: #4086b0; }
 
 /* The Invoice Intro
 ---------------------------------------------------------------------------------------------------- */
@@ -330,9 +344,12 @@ body {
   color: rgba(0, 0, 0, 0.75);
   animation-fill-mode: both;
   animation-duration: .5s; }
-  .panel.inactive {
+  .panel.closed {
+    visibility: hidden;
+    transform: translate3d(0, 100%, 0); }
+  .panel.closing {
     animation-name: slide-out; }
-  .panel.active {
+  .panel.opening {
     animation-name: slide-in; }
   .panel .close {
     width: 25px;
@@ -440,3 +457,72 @@ body {
     transform: translate3d(0, 0, 0); }
   100% {
     transform: translate3d(0, 100%, 0); } }
+
+/* Admin Member Timeline: On the right.
+---------------------------------------------------------------------------------------------------- */
+.history {
+  width: 100%;
+  float: left;
+  margin-bottom: 100px; }
+
+/* Items: Update article items. */
+.history article {
+  width: 100%;
+  float: left;
+  position: relative;
+  padding: 0 0 49px 125px; }
+
+.history article {
+  padding-top: 6px;
+  padding-bottom: 12px; }
+
+.history article:last-of-type {
+  padding-bottom: 0; }
+
+/* Timeline Marker: For each update. */
+.history article:before {
+  width: 9px;
+  height: 9px;
+  position: absolute;
+  top: 15px;
+  left: 96px;
+  content: '';
+  background-color: #ebebeb;
+  border-radius: 50%; }
+
+/* Timeline Lines: The line between each items. */
+.history article:not(:last-of-type):after {
+  width: 1px;
+  height: 100%;
+  position: absolute;
+  top: 16px;
+  left: 100px;
+  content: '';
+  background-color: #ebebeb; }
+
+/* Posted/Today: The posted date displayed as time ago. */
+.history article .posted {
+  height: 20px;
+  position: absolute;
+  top: 9px;
+  right: calc(100% - 75px);
+  padding: 0 5px;
+  background-color: #4086b0;
+  border-radius: 3px;
+  font-size: 12px;
+  line-height: 20px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.95);
+  text-align: center;
+  white-space: nowrap; }
+
+.history article .posted:after {
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 5px;
+  right: -6px;
+  content: '';
+  border-style: solid;
+  border-width: 5px 0 5px 6px;
+  border-color: transparent transparent transparent #4086b0; }

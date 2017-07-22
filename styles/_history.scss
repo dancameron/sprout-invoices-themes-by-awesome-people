@@ -1,0 +1,81 @@
+/* Admin Member Timeline: On the right.
+---------------------------------------------------------------------------------------------------- */
+
+.history {
+  width: 100%;
+  float: left;
+  margin-bottom: 100px;
+}
+
+/* Items: Update article items. */
+
+.history article {
+  width: 100%;
+  float: left;
+  position: relative;
+  padding: 0 0 49px 125px;
+}
+
+.history article {
+  padding-top: 6px;
+  padding-bottom: 12px;
+}
+
+.history article:last-of-type {
+  padding-bottom: 0;
+}
+
+/* Timeline Marker: For each update. */
+
+.history article:before {
+  width: 9px;
+  height: 9px;
+  position: absolute;
+  top: 15px;
+  left: 96px;
+  content: '';
+  background-color: #ebebeb;
+  border-radius: 50%;
+}
+
+/* Timeline Lines: The line between each items. */
+
+.history article:not(:last-of-type):after {
+  width: 1px;
+  height: 100%;
+  position: absolute;
+  top: 16px;
+  left: 100px;
+  content: '';
+  background-color: #ebebeb;
+}
+
+/* Posted/Today: The posted date displayed as time ago. */
+
+.history article .posted {
+  height: 20px;
+  position: absolute;
+  top: 9px;
+  right: calc(100% - 75px);
+  padding: 0 5px;
+  background-color: $color-blue;
+  border-radius: 3px;
+  font-size: 12px;
+  line-height: 20px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.95);
+  text-align: center;
+  white-space: nowrap;
+}
+
+.history article .posted:after {
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 5px;
+  right: -6px;
+  content: '';
+  border-style: solid;
+  border-width: 5px 0 5px 6px;
+  border-color: transparent transparent transparent $color-blue;
+}

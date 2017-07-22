@@ -7,7 +7,7 @@
   text-align: center;
 
   .inner {
-    padding: 100px 0 93px;
+    padding: 100px 0 100px;
     border-bottom: 1px dashed rgba(#ffffff, .75);
 
     @media ('max-width: 480px') {
@@ -36,8 +36,24 @@
       }
 
       span {
+        display: inline-block;
         font-size: 18px;
         font-weight: 900;
+        margin-bottom: 22px;
+      }
+
+      .open {
+        height: 30px;
+        display: inline-block;
+        padding: 0 12px;
+        background-color: #4086b0;
+        border-radius: 15px;
+        background-color: rgba(#ffffff, .75);
+        font-size: 12px;
+        font-weight: 900;
+        line-height: 30px;
+        text-transform: uppercase;
+        color: $color-blue;
       }
     }
   }

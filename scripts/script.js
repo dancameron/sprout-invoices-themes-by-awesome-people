@@ -9,8 +9,8 @@ $(document).ready(function() {
   $('.open').click(function(){
     var myelement = $(this).attr('href');
 
-    $(myelement).removeClass('inactive');
-    $(myelement).addClass('active');
+    $(myelement).removeClass('closed closing');
+    $(myelement).addClass('opening');
 
     return false;
   });
@@ -20,8 +20,12 @@ $(document).ready(function() {
   $('.close').click(function(){
     var myelement = $(this).attr('href');
 
-    $(myelement).removeClass('active');
-    $(myelement).addClass('inactive');
+    $(myelement).removeClass('opening');
+    $(myelement).addClass('closing');
+
+    setTimeout(function() {
+      $(myelement).addClass('closed');
+    }, 500);
 
     return false;
   });
